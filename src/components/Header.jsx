@@ -61,14 +61,18 @@ export default function Header() {
           <img src={dcLogo} alt="DC logo" />
         </div>
         <nav>
-          <ul className="d-flex list-unstyled m-0 gap-3 fw-bold">
-            {navLinks.map((navLink, index) => (              
+          <ul className="d-flex flex-wrap list-unstyled m-0 gap-3 fw-bold">
+            {navLinks.map((navLink, index) => (
               <li key={index}>
-                <a href={navLink.url} className={`text-decoration-none ${navLink.isActive ? "text-primary border-bottom border-primary" : "text-dark"}`}>{navLink.text}
+                <a
+                  href={navLink.url}
+                  className={`text-decoration-none ${navLink.isActive ? "text-primary border-bottom border-primary border-5" : "text-dark"}`}
+                >
+                  {navLink.text}
                 </a>
               </li>
             ))}
-          </ul>          
+          </ul>
         </nav>
       </div>
     </header>

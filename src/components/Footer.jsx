@@ -3,7 +3,9 @@ import merchandiseIcon from "../assets/img/buy-comics-merchandise.png";
 import subscriptionIcon from "../assets/img/buy-comics-subscriptions.png";
 import comicShopLocator from "../assets/img/buy-comics-shop-locator.png";
 import dcPowerVisa from "../assets/img/buy-dc-power-visa.svg";
-
+//note background images
+import footerHeroBackground from "../assets/img/footer-bg.jpg";
+import dcLogoBackground from "../assets/img/dc-logo-bg.png";
 // ICONE FOOTER --> FOLOOW US
 import facebookLink from "../assets/img/footer-facebook.png";
 import twitterLink from "../assets/img/footer-twitter.png";
@@ -127,12 +129,20 @@ export default function Footer() {
         </div>
       </div>
       {/*//note  Hero --> FASCIA GRIGIA */}
-      <section className="hero-footer bg-dark py-5 text-white overflow-hidden">
-        <div className="container">
+      <section
+        className="hero-footer bg-dark py-5 text-white overflow-hidden"
+        style={{ backgroundImage: `url(${footerHeroBackground})` }}
+      >
+        <div className="container position-relative">
+          <img
+            src={dcLogoBackground}
+            alt="DC Logo Background"
+            className="dc-logo-bg"
+          />
           <div className="row">
             {/* Colonne Link */}
             {heroSections.map((heroSection, index) => (
-              <div className="col-2">
+              <div className="col-12 col-md-6 col-lg-2">
                 <h5 className="fw-bold text-uppercase">{heroSection.title}</h5>
 
                 <ul className="list-unstyled small text-secondary">
