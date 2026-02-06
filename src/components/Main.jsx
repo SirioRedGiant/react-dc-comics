@@ -1,3 +1,5 @@
+import { Jumbotron } from "./components/Jumbotron";
+
 export default function Main() {
   //note <<< FUMETTI >>>
   const comics = [
@@ -178,28 +180,31 @@ export default function Main() {
   ];
 
   return (
-    <section className="bg-dark py-5">
-      <div className="container">
-        <div className="row g-4">
-          {comics.map((comic, index) => (
-            <div key={index} className="col-12 col-md-4 col-lg-2">
-              <div className="comic-card text-white">
-                <div className="img-container mb-3">
-                  <img
-                    src={comic.thumb}
-                    alt={comic.title}
-                    className="img-fluid w-100"
-                    style={{ height: "20vh" }}
-                  />
+    <>
+      <Jumbotron />
+      <section className="bg-dark py-5">
+        <div className="container">
+          <div className="row g-4">
+            {comics.map((comic, index) => (
+              <div key={index} className="col-12 col-md-4 col-lg-2">
+                <div className="comic-card text-white">
+                  <div className="img-container mb-3">
+                    <img
+                      src={comic.thumb}
+                      alt={comic.title}
+                      className="img-fluid w-100"
+                      style={{ height: "20vh" }}
+                    />
+                  </div>
+                  <span className="text-uppercase small fw-bold">
+                    {comic.title}
+                  </span>
                 </div>
-                <span className="text-uppercase small fw-bold">
-                  {comic.title}
-                </span>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
