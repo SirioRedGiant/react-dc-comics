@@ -1,4 +1,15 @@
-import dcLogo from "../assets/img/dc-logo.png";
+const TopLinkNavBAr = ({ url, text, isActive }) => {
+  return (
+    <li>
+      <a
+        href={url}
+        className={`text-decoration-none py-4 d-inline-block ${isActive ? "text-primary border-bottom border-primary border-5" : "text-dark"}`}
+      >
+        {text}
+      </a>
+    </li>
+  );
+};
 
 export default function Header({ headLogoImg, links }) {
   return (
@@ -11,14 +22,12 @@ export default function Header({ headLogoImg, links }) {
           <ul className="d-flex flex-wrap list-unstyled m-0 gap-3 fw-bold">
             {/*//note ciclo su navLinks  */}
             {links.map((link) => (
-              <li key={link.id}>
-                <a
-                  href={link.url}
-                  className={`text-decoration-none py-4 d-inline-block ${link.isActive ? "text-primary border-bottom border-primary border-5" : "text-dark"}`}
-                >
-                  {link.text}
-                </a>
-              </li>
+              <TopLinkNavBAr
+                key={link.id}
+                url={link.url}
+                isActive={link.isActive}
+                text={link.text}
+              />
             ))}
           </ul>
         </nav>

@@ -5,7 +5,7 @@ import headLogoImg from "./assets/img/dc-logo.png";
 import jumbotronImg from "./assets/img/jumbotron.jpg";
 
 //note NAVLINKS --> Header links
-import navLinks from "./data/links";
+import navLinks from "./data/headerlinks";
 
 //note ARRAY COMICS fumetti
 import comicsListData from "./data/comics";
