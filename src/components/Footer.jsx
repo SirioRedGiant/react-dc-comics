@@ -16,6 +16,23 @@ const buyGoods = ({ img, text, url }) => {
   );
 };
 
+//note ricorda che texts è un array di stringhe
+const heroLinkColumn = ({ title, texts }) => {
+  return (
+    <div className="col-12 col-md-6 col-lg-2">
+      <h5 className="fw-bold">{title}</h5>
+      <ul className="list-unstyled small text-secondary">
+        {texts.map((text, index) => (
+          <li key={index}>
+            <a href="#" className="text-reset text-decoration-none">
+              {text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 export default function Footer() {
   return (
     <footer>
@@ -46,19 +63,11 @@ export default function Footer() {
           <div className="row">
             {/* Colonne Link */}
             {heroSections.map((heroSection, index) => (
-              <div key={index} className="col-12 col-md-6 col-lg-2">
-                <h5 className="fw-bold text-uppercase">{heroSection.title}</h5>
-
-                <ul className="list-unstyled small text-secondary">
-                  {heroSection.texts.map((text, index) => (
-                    <li key={index}>
-                      <a href="#" className="text-reset text-decoration-none">
-                        {text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <heroLinkColumn
+                key={index}
+                title={heroSection.title}
+                texts={heroSection.texts}
+              />
             ))}
           </div>
         </div>
